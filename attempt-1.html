@@ -6,7 +6,7 @@
 				font-family:arial;
 			}
 			#page{
-				background-color:#DDDDDD;
+				/*background-color:#DDDDDD;*/
 				width:800px;
 				height:100%;
 			}
@@ -44,6 +44,7 @@
 				var midpointX = $("#awesome-button-container").innerWidth() / 2;
 				window.t = 0;
 				$("#awesome-button-container").mouseover(function(){
+					$("#awesome-button").css("box-shadow", "0px 3px 10px -3px #000000");
 					$("#awesome-button").animate({
 						"background-color": "green"
 					}, 180);
@@ -68,7 +69,7 @@
 					}
 					//$("#header2").html("<p><strong>X-Position: </strong>"+relativeXPosition+" | <strong>Y-Position: </strong>"+relativeYPosition+" | <strong>magnetic Y Offset: </strong>"+magneticOffsetY+"</p>")
 				});
-				$("#awesome-button-container").on("mouseout", function(){
+				$("#awesome-button-container").mouseleave(function(){
 					$("#awesome-button").css("box-shadow", "0px 3px 10px -3px #000000");
 					$("#awesome-button").animate({
 						top: "0px",
