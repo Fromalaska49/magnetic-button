@@ -67,7 +67,8 @@
 						window.t = (new Date()).getTime();
 					}
 					//$("#header2").html("<p><strong>X-Position: </strong>"+relativeXPosition+" | <strong>Y-Position: </strong>"+relativeYPosition+" | <strong>magnetic Y Offset: </strong>"+magneticOffsetY+"</p>")
-				}).mouseout(function(){
+				});
+				$("#awesome-button-container").on("mouseout", function(){
 					$("#awesome-button").css("box-shadow", "0px 3px 10px -3px #000000");
 					$("#awesome-button").animate({
 						top: "0px",
