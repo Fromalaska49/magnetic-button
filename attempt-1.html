@@ -57,7 +57,7 @@
 				var magneticOffsetX;
 				var maxTiltDegree = 15;
 				$("#awesome-button-container").mouseover(function(){
-					$("#awesome-button").css("box-shadow", "0px 3px 10px -3px #000000");
+					$("#awesome-button").css("box-shadow", "0px 3px 15px -3px #000000");
 					$("#awesome-button").animate({
 						"background-color": "green"
 					}, 180);
@@ -86,19 +86,19 @@
 					}, {
 						step: function(now, fx){
 							var percentTransition = now / 10;
-							rotateX = maxTiltDegree * percentOffsetY * now / 10;
-							rotateY = 0 - maxTiltDegree * percentOffsetX * now / 10;
+							rotateX = maxTiltDegree * percentOffsetY * percentTransition;
+							rotateY = 0 - maxTiltDegree * percentOffsetX * percentTransition;
 							$("#awesome-button").css("transform", "rotateX("+rotateX+"deg) rotateY("+rotateY+"deg)");
 							magneticOffsetY = percentOffsetY * awesomeButtonContainerPadding * percentTransition;
 							magneticOffsetX = percentOffsetX * awesomeButtonContainerPadding * percentTransition;
 							$("#awesome-button").css("top", magneticOffsetY+"px");
 							$("#awesome-button").css("left", magneticOffsetX+"px");
 							var shadowY = 3 * percentTransition;
-							var blur = 7 + 3 * percentTransition;
+							var blur = 7 + 8 * percentTransition;
 							var unblur = 0 - percentTransition - 3;
 							$("#awesome-button").css("boxShadow", "0px "+shadowY+"px "+blur+"px "+unblur+"px #000000");
 						}
-					}, 2000);
+					});
 				});
 			});
 		</script>
@@ -109,7 +109,7 @@
 			<div class="awesome-button-container" id="awesome-button-container">
 				<div class="awesome-button" id="awesome-button" style="background-size:cover;background-image:url('https://c2.staticflickr.com/2/1520/24330829813_944c817720_b.jpg')">
 					<div id="awesome-button-text">
-						Cool Button
+						Magnetic
 					</div>
 				</div>
 			</div>
