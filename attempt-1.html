@@ -88,15 +88,15 @@
 							var percentTransition = now / 10;
 							rotateX = maxTiltDegree * percentOffsetY * percentTransition;
 							rotateY = 0 - maxTiltDegree * percentOffsetX * percentTransition;
-							$("#awesome-button").css("transform", "rotateX("+rotateX+"deg) rotateY("+rotateY+"deg)");
+							$(this).css("transform", "rotateX("+rotateX+"deg) rotateY("+rotateY+"deg)");
 							magneticOffsetY = percentOffsetY * awesomeButtonContainerPadding * percentTransition;
 							magneticOffsetX = percentOffsetX * awesomeButtonContainerPadding * percentTransition;
-							$("#awesome-button").css("top", magneticOffsetY+"px");
-							$("#awesome-button").css("left", magneticOffsetX+"px");
+							$(this).css("top", magneticOffsetY+"px");
+							$(this).css("left", magneticOffsetX+"px");
 							var shadowY = 3 * percentTransition;
 							var blur = 7 + 8 * percentTransition;
 							var unblur = 0 - percentTransition - 3;
-							$("#awesome-button").css("boxShadow", "0px "+shadowY+"px "+blur+"px "+unblur+"px #000000");
+							$(this).css("boxShadow", "0px "+shadowY+"px "+blur+"px "+unblur+"px #000000");
 						}
 					});
 				});
